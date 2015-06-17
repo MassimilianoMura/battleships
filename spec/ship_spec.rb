@@ -20,7 +20,7 @@ describe Ship do
 describe 'hit' do
 
   it 'increases the value of hits when it is hit' do
-    ship.hit
+    ship.receive_hit
     expect(ship.hits).to eq 1
   end
 

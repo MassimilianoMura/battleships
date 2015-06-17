@@ -14,8 +14,9 @@ class Ship
     hits >= size ? (@sunk = true) : (@sunk = false)
   end
 
-  def hit
+  def receive_hit
     @hits += 1
+    return 'ship sunk' if self.sunk?
   end
 
 
