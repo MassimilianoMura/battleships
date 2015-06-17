@@ -12,7 +12,7 @@ describe Board do
     expect(subject.board).to include(ship)
   end
 
-  describe 'shoot at' do
+  describe 'shoot_at' do
 
     it 'can receive a hit on a ship' do
       subject.shoot_at 'B2'

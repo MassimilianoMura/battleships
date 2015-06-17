@@ -16,4 +16,12 @@ describe Ship do
     expect(ship.hits).to eq 1
   end
 
+describe 'sunk?' do
+  it 'checks if the ship is sunk' do
+    expect(ship.sunk?).to be false
+  end
+end
+
+
+
 end
