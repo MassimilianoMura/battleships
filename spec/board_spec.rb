@@ -2,9 +2,8 @@ require 'board'
 
 describe Board do
 
-  let(:ship) {double :ship}
+  let(:ship) {double :ship, position: 'B2' }
   before(:each) do
-    board = Board.new
     subject.add_ship(ship)
   end
 
@@ -14,7 +13,7 @@ describe Board do
   end
 
   it 'can receive a hit on a ship' do
-    subject.shoot_at(position)
+    subject.shoot_at 'B2'
     expect(subject.board).not_to include(ship)
   end
 

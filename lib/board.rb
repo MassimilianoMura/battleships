@@ -12,4 +12,17 @@ class Board
     @board << ship
   end
 
+  def shoot_at target
+    if is_there_a_boat? target
+      board.delete_if { |ship| ship.position == target}
+    else print 'Missed!'
+    end
+  end
+
+  private
+
+  def is_there_a_boat? target
+    board.any?{|ship| ship.position == target}
+  end
+
 end
