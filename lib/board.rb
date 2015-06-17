@@ -20,6 +20,8 @@ class Board
     end
   end
 
+
+
   private
 
   def is_there_a_ship? target

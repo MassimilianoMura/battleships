@@ -28,9 +28,9 @@ describe Board do
   describe 'report' do
 
     it 'reports if all ships are sunk' do
-      expect(subject.board).to be_empy?
+      subject.shoot_at 'B2'
+      expect{subject.report}.to raise 'All ships are sunk'
     end
-
 
   end
 
