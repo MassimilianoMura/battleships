@@ -21,7 +21,8 @@ class Board
   end
 
   def report
-    'All ships are sunk' if @board.empty?
+    return 'All ships are sunk' if @board.empty?
+    return 'Not all ships are sunk' if @board.empty? == false
   end
 
   private
