@@ -32,6 +32,10 @@ describe Board do
       expect(subject.report).to eq 'All ships are sunk'
     end
 
+    it 'reports if not all ships are sunk' do
+      expect(subject.report).to eq 'Not all ships are sunk'
+    end
+
   end
 
 end
