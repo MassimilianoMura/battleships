@@ -29,7 +29,7 @@ describe Board do
 
     it 'reports if all ships are sunk' do
       subject.shoot_at 'B2'
-      expect{subject.report}.to raise 'All ships are sunk'
+      expect(subject.report).to eq 'All ships are sunk'
     end
 
   end

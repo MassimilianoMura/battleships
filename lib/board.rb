@@ -20,7 +20,9 @@ class Board
     end
   end
 
-
+  def report
+    'All ships are sunk' if @board.empty?
+  end
 
   private
 
