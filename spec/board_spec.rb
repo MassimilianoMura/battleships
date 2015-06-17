@@ -25,4 +25,13 @@ describe Board do
 
   end
 
+  describe 'report' do
+
+    it 'reports if all ships are sunk' do
+      expect(subject.board).to be_empy?
+    end
+
+
+  end
+
 end
