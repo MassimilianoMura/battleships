@@ -15,7 +15,8 @@ class Board
   def shoot_at target
     if is_there_a_boat? target
       board.delete_if { |ship| ship.position == target}
-    else print 'Missed!'
+    else
+      'Missed!'
     end
   end
 
