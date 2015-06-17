@@ -13,7 +13,7 @@ describe Ship do
   end
 
   it 'can record number of hits' do
-    expect(ship.hit).to eq 1
+    expect(ship.hits).to eq 1
   end
 
 end
