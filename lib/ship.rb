@@ -16,10 +16,8 @@ class Ship
   def add_position_north
     num = get_number_coordinates.to_i + 1
       @size.times do
-        num -= 1
-        new_num = num.to_s
-        let = get_letter_coordinates
-        @all_positions <<  let + new_num
+       num -= 1
+       add_coordinats_north_or_south num
       end
   end
 
@@ -27,9 +25,7 @@ class Ship
     num = get_number_coordinates.to_i - 1
     @size.times do
       num += 1
-      new_num = num.to_s
-      let = get_letter_coordinates
-      @all_positions <<  let + new_num
+      add_coordinats_north_or_south num
     end
   end
 
@@ -37,9 +33,7 @@ class Ship
    let = get_letter_coordinates.ord + 1
     @size.times do
       let -= 1
-      new_let = let.chr
-      num = get_number_coordinates
-      @all_positions <<  new_let + num
+      add_coordinats_east_or_west let
     end
   end
 
@@ -47,9 +41,7 @@ class Ship
     let = get_letter_coordinates.ord - 1
     @size.times do
       let += 1
-      new_let = let.chr
-      num = get_number_coordinates
-      @all_positions <<  new_let + num
+      add_coordinats_east_or_west let
     end
   end
 
@@ -63,6 +55,18 @@ class Ship
     else
       add_position_east
     end
+  end
+
+  def add_coordinats_north_or_south num
+    new_num = num.to_s
+    let = get_letter_coordinates
+    @all_positions <<  let + new_num
+  end
+
+  def add_coordinats_east_or_west let
+    new_let = let.chr
+    num = get_number_coordinates
+    @all_positions <<  new_let + num
   end
 
   def get_letter_coordinates
