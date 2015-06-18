@@ -17,6 +17,10 @@ describe Ship do
     expect(ship.direction).to eq :S
   end
 
+  # it 'covers correct coordinates if size is greater than 1' do
+  #   expect(ship.position).to eq 'A2'
+  # end
+
   it 'can record number of hits' do
     expect(ship.hits).to eq 0
   end
