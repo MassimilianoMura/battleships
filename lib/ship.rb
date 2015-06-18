@@ -15,13 +15,14 @@ class Ship
   def add_position
 
     if self.direction == 'N'
-      num = get_number_coordinates
+      num = get_number_coordinates + 1
       @size.times do
 
         num -= 1
         new_num = num.to_s
         let = get_letter_coordinates
         @all_positions <<  let + new_num
+
 
     end
   end
