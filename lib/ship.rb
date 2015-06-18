@@ -16,7 +16,11 @@ class Ship
 
   def receive_hit
     @hits += 1
-    return 'ship sunk' if self.sunk?
+    if self.sunk?
+      'Ship sunk'
+    else
+      'Ship hit!'
+    end
   end
 
 

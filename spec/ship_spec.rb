@@ -2,7 +2,7 @@ require 'ship'
 
 describe Ship do
 
-  let(:ship) {Ship.new 'A1' , 2 }
+  let(:ship) {Ship.new 'A1' , 2 , :S}
   let(:board) {double :board}
 
   it 'has a position when created' do
@@ -11,6 +11,10 @@ describe Ship do
 
   it 'has a size' do
     expect(ship.size).to eq 2
+  end
+
+  it 'has a position when created' do
+    expect(ship.direction).to eq :S
   end
 
   it 'can record number of hits' do
