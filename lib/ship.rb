@@ -46,27 +46,27 @@ class Ship
   end
 
   def add_position
-    if self.direction == 'N'
+
+    case self.direction
+    when 'N'
       add_position_north
-    elsif self.direction == 'S'
+    when 'S'
       add_position_south
-    elsif self.direction == 'W'
+    when 'W'
       add_position_west
-    else
+    when 'E'
       add_position_east
     end
   end
 
   def add_coordinats_north_or_south num
-    new_num = num.to_s
     let = get_letter_coordinates
-    @all_positions <<  let + new_num
+    @all_positions <<  let + num.to_s
   end
 
   def add_coordinats_east_or_west let
-    new_let = let.chr
     num = get_number_coordinates
-    @all_positions <<  new_let + num
+    @all_positions <<  let.chr + num
   end
 
   def get_letter_coordinates
