@@ -15,7 +15,7 @@ class Ship
   def add_position
 
     if self.direction == 'N'
-      num = get_number_coordinates + 1
+      num = get_number_coordinates.to_i + 1
       @size.times do
         num -= 1
         new_num = num.to_s
@@ -23,24 +23,40 @@ class Ship
         @all_positions <<  let + new_num
       end
     elsif self.direction == 'S'
-      num = get_number_coordinates - 1
+      num = get_number_coordinates.to_i - 1
       @size.times do
         num += 1
         new_num = num.to_s
         let = get_letter_coordinates
         @all_positions <<  let + new_num
       end
-
-
+    elsif self.direction == 'W'
+      let = get_letter_coordinates.ord + 1
+      @size.times do
+        let -= 1
+        new_let = let.chr
+        num = get_number_coordinates
+        @all_positions <<  new_let + num
+      end
+    else
+        let = get_letter_coordinates.ord - 1
+      @size.times do
+        let += 1
+        new_let = let.chr
+        num = get_number_coordinates
+        @all_positions <<  new_let + num
+      end
     end
+
   end
 
   def get_letter_coordinates
     position[0]
+
   end
 
   def get_number_coordinates
-    position[1].to_i
+    position[1]
   end
 
 

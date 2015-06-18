@@ -36,15 +36,15 @@ require 'ship'
       end
 
       let(:ship3) { Ship.new 'C4' , 2 , 'E' }
-      it 'adds coordinate values based on south direction' do
-        ship2.add_position
-        expect(ship2.all_positions).to include 'D4'
+      it 'adds coordinate values based on east direction' do
+        ship3.add_position
+        expect(ship3.all_positions).to include 'D4'
       end
 
       let(:ship4) { Ship.new 'C4' , 2 , 'W' }
-      it 'adds coordinate values based on south direction' do
-        ship2.add_position
-        expect(ship2.all_positions).to include 'B4'
+      it 'adds coordinate values based on west direction' do
+        ship4.add_position
+        expect(ship4.all_positions).to include 'B4'
       end
 
     end
