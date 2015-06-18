@@ -13,7 +13,7 @@ describe Ship do
     expect(ship.size).to eq 2
   end
 
-  it 'has a position when created' do
+  it 'has a direction when created' do
     expect(ship.direction).to eq :S
   end
 
