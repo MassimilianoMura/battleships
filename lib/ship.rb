@@ -5,6 +5,7 @@ class Ship
 
   def initialize position, size, direction
     @position = position
+    @all_positions = []
     @size = size
     @direction = direction
     @hits = 0
@@ -12,16 +13,16 @@ class Ship
   end
 
   def add_position
-    all_position = []
 
     if self.direction == 'N'
+      num = get_number_coordinates
       @size.times do
-        num ||= get_number_coordinates
+
         num -= 1
-        num.to_s
+        new_num = num.to_s
         let = get_letter_coordinates
-        p num
-        p let
+        @all_positions <<  let + new_num
+
     end
   end
 
