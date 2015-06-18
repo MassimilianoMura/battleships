@@ -31,4 +31,6 @@ class Board
     board.any?{|ship| ship.position == target}
   end
 
+  #remember it's working with position, change with all_positions
+
 end
