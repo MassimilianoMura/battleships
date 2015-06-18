@@ -23,20 +23,17 @@ require 'ship'
 
   describe 'add_position' do
 
-    before(:each) do
-      ship.add_position
-    end
-
     let(:ship) { Ship.new 'C4' , 2 , 'N' }
     it 'adds coordinate values based on north direction' do
+      ship.add_position
       expect(ship.all_positions).to include 'C3'
     end
 
-    # let(:ship) { Ship.new 'C4' , 2 , 'S' }
-    # it 'adds coordinate values based on south direction' do
-    #   ship.add_position
-    #   expect(ship.all_positions).to include 'C5'
-    # end
+    let(:ship2) { Ship.new 'C4' , 2 , 'S' }
+    it 'adds coordinate values based on south direction' do
+      ship2.add_position
+      expect(ship2.all_positions).to include 'C5'
+    end
 
   end
 
