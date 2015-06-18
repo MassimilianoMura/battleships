@@ -26,6 +26,23 @@ class Ship
     end
   end
 
+
+  def sunk?
+    hits >= size ? (@sunk = true) : (@sunk = false)
+  end
+
+  def receive_hit
+    @hits += 1
+    if self.sunk?
+      'Ship sunk'
+    else
+      'Ship hit!'
+    end
+  end
+
+
+  private
+
   def add_position_north
     num = get_number_coordinates.to_i + 1
       @size.times do
@@ -76,21 +93,5 @@ class Ship
   def get_number_coordinates
     position[1]
   end
-
-
-
-  def sunk?
-    hits >= size ? (@sunk = true) : (@sunk = false)
-  end
-
-  def receive_hit
-    @hits += 1
-    if self.sunk?
-      'Ship sunk'
-    else
-      'Ship hit!'
-    end
-  end
-
 
 end

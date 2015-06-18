@@ -2,12 +2,10 @@ require 'player'
 
 describe Player do
 
-  let(:ship) {double :ship, position: 'B2' }
-  let(:board) {double :board}
+  subject {Player.new(double :board, add_ship: :ship)}
 
   it 'can place ships' do
-
-
+    expect(subject.place :ship).to eq :ship
   end
 
 
