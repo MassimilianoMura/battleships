@@ -10,8 +10,21 @@ class Ship
     @direction = direction
     @hits = 0
     @sunk = false
+    add_position
   end
 
+   def add_position
+    case self.direction
+    when 'N'
+      add_position_north
+    when 'S'
+      add_position_south
+    when 'W'
+      add_position_west
+    when 'E'
+      add_position_east
+    end
+  end
 
   def add_position_north
     num = get_number_coordinates.to_i + 1
@@ -42,20 +55,6 @@ class Ship
     @size.times do
       let += 1
       add_coordinats_east_or_west let
-    end
-  end
-
-  def add_position
-
-    case self.direction
-    when 'N'
-      add_position_north
-    when 'S'
-      add_position_south
-    when 'W'
-      add_position_west
-    when 'E'
-      add_position_east
     end
   end
 
