@@ -1,8 +1,12 @@
 
 class Player
 
+  attr_accessor :hits, :misses
+
   def initialize board
     @board = board
+    @hits = []
+    @misses = []
   end
 
   def place ship
